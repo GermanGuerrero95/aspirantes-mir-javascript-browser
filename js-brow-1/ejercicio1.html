@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mayúsculas</title>
+  </head>
+  <body>
+    <label for="texto">Escribe algo:</label>
+    <input type="text" id="texto" />
+    <button class="btn">Convertir mensaje a mayusculas</button>
+    <p id="resultado"></p>
+    <script>
+      const input = document.querySelector("#texto");
+      const resultado = document.querySelector("#resultado");
+      const button = document.querySelector(".btn");
+      //1.Que otras alternativas para seleccionar el input y el párrafo existen?
+      /*Respuesta:
+      1.const input=getElementById("#texto") / const resultado=getElementById("#resultado").
+      2.const input = document.querySelector("input");/ const resultado = document.querySelector("p");
+       document.querySelector selecciona siempre al primer elemento que encuestre y en este documento 
+       solo hay un label y un p. Entonces con solo indicar el elemento los encontraría.
+      3.const input= getElementsByClassName(".texto") / const input= getElementsByClassName(".resultado")
+      solo funcionaría si tuviran clases, pero en este caso no la tienen.
+      4. const input = document.querySelectorAll("#input")/ const resultado = document.querySelectorAll("#resultado")
+        no funcionan ya que ambos elementos que se buscan deberían tener el mismo id. Tener dos id iguales en 
+        elementos diferentes es mala práctica. Aún así si ambos tuvieran el mismo id con document.querySelectorAll("#mismoid")
+        sí los encontraría y los seleccionaría a ambos ya que JS compila así hayan malas prácticas (las ignora.)
+
+      */
+
+      //2. Agregando el boton de para que se ejecute el upperCase de la palabra en el input.
+      button.addEventListener("click", () => {
+        const texto = input.value.toUpperCase();
+        resultado.textContent = texto;
+      });
+    </script>
+  </body>
+</html>
