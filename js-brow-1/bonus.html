@@ -16,26 +16,18 @@
       const resultado = document.querySelector("#resultado");
       const button = document.querySelector(".btn");
       button.addEventListener("click", () => {
-        const texto = input.value.toUpperCase(); //El valor del input lo mantengo en mayúscula
-        let normal; //Variable para el orden ordinario de la palabra.
-        let noNormal; //Variable donde se deposita la palabra al revés
-        let a = []; //Variables con un array vacio para ingresar el indice.
-        for (let i = 0; i < texto.length; i++) {
-          a = i; // Voy a sacar el indice depositado en una variable para darselo al if
-          (normal = texto), a; //A normal le damos la palabra en su orden ordinario + su indice
-          noNormal = normal.split("").reverse(); //Aca se desposita al revés la palabra . El split("") es para separar. Sin embargo acá lo use para meter la palabra al revés en un array porque ahí si funciona reverse().
-          //console.log(normal[i]) //Acá verifique sí la palabra quedaba en su orden ordinario  en un array por eso el i
-          //console.log(noNormal[i]) // Acá verifique que la palabra quedara al revés
-          //console.log(normal[i] + noNormal[i] ) /Acá verifique ambas
-        }
+        const texto = input.value.toUpperCase();
 
-        if (normal[a] !== noNormal[a]) {
-          //Palabra normal es diferente a palabra al reveés = No palíndroma
-          const noI = `${texto}  no es una no es palabra palíndroma`; //se hace la union de texto con un noI con template strings. Imprimo ambas variables de una vez
+        let pinvertido = texto.split("").reverse().join("");
+        /*Busque en la documentación de MDN de javascript y hay un metodo join() que vuelve el array en un string
+        Eso me permitio reducir casi todo el código anterior. Aca separamos con split se vuelve array, luego volteamos con
+        reverse() y finalmente lo vuelvo de nuevo string con join().*/
+
+        if (texto !== pinvertido) {
+          const noI = `${texto}  no es una palabra palíndroma`;
           resultado.textContent = noI;
         } else {
-          //Else todo lo contrario
-          const siP = ` ${texto} es una palabra palíndroma `; //se hace la union de texto con un noI con template strings. Imprimo ambas variables de una vez
+          const siP = ` ${texto} es una palabra palíndroma `;
           resultado.textContent = siP;
         }
       });
