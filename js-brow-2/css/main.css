@@ -1,0 +1,147 @@
+/*Custom properties*/
+
+:root{
+    --primario:#022340;
+    --secundario:#3493ad;
+    --negro:#000000;
+    --blanco:#fff;
+    --primarioClaro:#2c5055;
+    --morado:#3F0359;
+    --gris:#b1b1b1;
+    --rojoClaro:#d75b5b;
+    --fuente:'Poiret One', cursive;
+}
+
+/*Standars*/
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+body{
+    font-size: 1.6rem;
+    font-family: var(--fuente);
+    
+    
+   
+}
+
+
+/*Globales*/
+
+fieldset{
+    /* border: 0.01rem solid var(--gris); */
+    border: none;
+   
+    
+}
+
+ul{
+    list-style: none; 
+    
+}
+
+input,button{
+    font-family: var(--fuente);
+    font-size: 0.8rem;
+}
+
+
+
+
+/*Utilities*/
+
+/*Reutilizo este tipo de boton para todo el proyecto*/
+
+.button{
+    background-color: var(--rojoClaro);
+    border: none;
+    color: var(--blanco);
+    border-radius: 0.2rem;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.button:hover{
+    opacity: 2;  
+}
+.buttonTwo{
+    background-color: var(--primarioClaro);
+    border: none;
+    color: var(--blanco);
+    border-radius: 0.2rem;
+    opacity: 0.6;
+    transition: 0.3s;
+    height: 2rem;
+}
+
+.buttonTwo:hover{
+    opacity: 2;  
+}
+
+.contenedor{
+    max-width: 35rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+.center{
+    text-align: center;
+}
+
+
+/*Section*/
+.app{
+    margin-top: 5rem;
+    text-align: center;
+    border: 0.1rem solid rgb(49, 26, 26);
+    padding: 2rem;
+}
+
+
+
+/*Form*/
+
+
+.form{
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+/*Ul*/
+
+
+.items{
+  display: block;
+  position: relative;
+  right:  2rem;
+  padding: 1rem;
+}
+
+
+
+
+.ul__item{
+    border-bottom: 0.1rem solid var(--gris);
+    display: flex;
+    background-color: var(--blanco);
+    margin: 1rem;
+}
+
+
+
+
+ input[type="checkbox"]:checked + label {
+    color: var(--secundario);
+    opacity: 0.3;
+
+} 
+
+
+
